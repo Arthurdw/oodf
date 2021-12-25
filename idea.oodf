@@ -1,0 +1,49 @@
+/-/ Single line comment
+
+/--
+Multiline comment
+--/
+
+/-/ Variable declaration
+myVariable 10 
+
+anObject {
+    /-/ A property with the name "value" which contains 10
+    value: 10,
+
+    /-/ A nested object
+    nested {
+        /-/ Usage of types
+        string: "Contains this string",
+
+        /-/ This is also a single line string, they get merged
+        singlelineString: "Hello there, "
+                          "how are you doing?"
+
+        /-/ Span a string over multiple lines while preserving newlines
+        multilineString: """
+        Hello
+        There
+        """,
+
+        /-/ Use a variable in a string
+        stringInterpolation: `everything gets casted to a string {myVariable}`,
+
+        /-/ Escaping a string interpolation can be done by using a double bracket
+        escapeInterpolation: `will be 10: {myVariable}, will be the literal string {{myVariable}}`,
+        
+        number: 100,
+        float: 1.234567890,
+
+        boolean: true,
+        alsoBoolean: false
+
+        aCollection [
+            "Can contain",
+            "a list of",
+            "items from the same type",
+            "delimited by a `,`"
+        ]
+    }
+}
+
