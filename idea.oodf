@@ -5,7 +5,7 @@ Multiline comment
 --/
 
 /-/ Variable declaration
-myVariable 10 
+myVariable 10; 
 
 anObject {
     /-/ A property with the name "value" which contains 10
@@ -18,7 +18,7 @@ anObject {
 
         /-/ This is also a single line string, they get merged
         singlelineString: "Hello there, "
-                          "how are you doing?"
+                          "how are you doing?",
 
         /-/ Span a string over multiple lines while preserving newlines
         multilineString: """
@@ -36,7 +36,7 @@ anObject {
         float: 1.234567890,
 
         boolean: true,
-        alsoBoolean: false
+        alsoBoolean: false,
 
         aCollection [
             "Can contain",
@@ -45,5 +45,5 @@ anObject {
             "delimited by a `,`"
         ]
     }
-}
+};
 
