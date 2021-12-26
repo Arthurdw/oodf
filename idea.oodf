@@ -1,8 +1,14 @@
-/-/ Single line comment
+/-/ Singleline comment
 
 /--
 Multiline comment
 --/
+
+/!/ Singleline keynote (comment) which should not be removed when minified
+
+/!!
+Multiline keynote (comment) which should not be removed when minified.
+!!/
 
 /-/ Variable declaration
 myVariable 10; 
@@ -43,7 +49,44 @@ anObject {
             "a list of",
             "items from the same type",
             "delimited by a `,`"
-        ]
+        ],
+
+        nullValue: null
     }
 };
+
+/--
+Language blocks are defined using the pipe operator before a string (which can also be interpolated).
+So for example placing |py| before a string may provide python syntax highligthing and error detection in your IDE. (if plugin installed).
+Placing a ! before it will escape the string to the proper escaped representation (if applicable).
+--/
+
+escapeHtml |!html|"""
+<html>
+  <body>
+    <p>Hello World!</p>
+  </body>
+</html>
+""";
+
+/--
+Results in:
+
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;p&gt;Hello World!&lt;/p&gt;    
+  &lt;/body&gt;   
+&lt;/html&gt;
+--/
+
+myUrl |url|"https://oodf.arthurdw.com/?bake=eggs&eat=fries";
+escapedMyUrl |!url|myUr;
+
+/--
+Results in:
+
+myUrl: https://oodf.arthurdw.com/?bake=eggs&eat=fries
+escapedMyUrl: https%3A%2F%2Foodf.arthurdw.com%2F%3Fbake%3Deggs%26eat%3Dfries
+--/
+
 
