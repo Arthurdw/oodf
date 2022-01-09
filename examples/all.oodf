@@ -1,10 +1,10 @@
-/-/ Singleline comment
+/-/ Single line comment
 
 /--
 Multiline comment
 --/
 
-/!/ Singleline keynote (comment) which should not be removed when minified
+/!/ Single line keynote (comment) which should not be removed when minified
 
 /!!
 Multiline keynote (comment) which should not be removed when minified.
@@ -23,7 +23,7 @@ anObject {
         string: "Contains this string",
 
         /-/ This is also a single line string, they get merged
-        singlelineString: "Hello there, "
+        singleLineString: "Hello there, "
                           "how are you doing?",
 
         /-/ Span a string over multiple lines while preserving newlines
@@ -57,7 +57,7 @@ anObject {
 
 /--
 Language blocks are defined using the pipe operator before a string (which can also be interpolated).
-So for example placing |py| before a string may provide python syntax highligthing and error detection in your IDE. (if plugin installed).
+So for example placing |py| before a string may provide python syntax highlighting and error detection in your IDE. (if plugin installed).
 Placing a ! before it will escape the string to the proper escaped representation (if applicable).
 --/
 

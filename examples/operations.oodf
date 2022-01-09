@@ -1,0 +1,8 @@
+val "Hello, " + "World!";
+addition 6 + 2;
+subtraction 10 - 2;
+multiplication 2 * 4;
+division 16 / 2;
+modulo 17 % 9;
+exponentiation 2 ** 3;
+floorDivision 15 // 2;

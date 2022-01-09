@@ -1,0 +1,14 @@
+welcome = "Hello, World!";
+
+foo "bar";
+bar "foo";
+
+number 1;
+float 3.14;
+
+yes true;
+no false;
+
+collection [1, 2, 3];
+
+nullValue: null;
