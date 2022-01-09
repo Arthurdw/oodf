@@ -11,5 +11,4 @@ class TestKeynotes(TestCase):
     data = get_sample("keynotes")
 
     def test_keynotes_parse(self):
-        # TODO: implement function which asserts
         self.assertEqual({}, load(self.data), "Keynotes should be removed for transpilation")

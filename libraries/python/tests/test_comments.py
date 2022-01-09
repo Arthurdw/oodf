@@ -11,5 +11,4 @@ class TestComments(TestCase):
     data = get_sample("comments")
 
     def test_comments_parse(self):
-        # TODO: implement function which asserts
         self.assertEqual({}, load(self.data), "Comments should be removed")
