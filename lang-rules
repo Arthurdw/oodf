@@ -1,4 +1,4 @@
-  1. Variables may refference another variable, but no recursion is allowed.
+  1. Variables may reference another variable, but no recursion is allowed.
   2. Variables may be declared by using a '=' or just leaving a space.
   3. Variables declaration must end with a ';' or a newline. 
   4. Objects may be empty.
@@ -22,18 +22,18 @@
  13. A collection may be empty.
  14. A collection may only consist of items from the same type.
  15. Collection items are delimited by a ','.
- 16. A singleline comment starts with a '/-/' and ends with a newline.
+ 16. A single line comment starts with a '/-/' and ends with a newline.
  17. A multiline comment starts with a '/--' and ends with a '--/'.
  18. Comments are not being lexed. (they are ignored by the transpiler)
- 19. A singleline keynote starts with a '/!/' and ends with a newline.
+ 19. A single line keynote starts with a '/!/' and ends with a newline.
  20. A multiline keynote starts with a '/!!' and ends with a '!!/'
  21. Keynotes are being lexed and transpiled if applicable. (only if transpiled to a file, if interpreted they are ignored like comments)
  22. Keynotes do not get removed or modified when oodf gets minified. (unless explicitly specified)
- 23. A string gets defined by a double quote (") or single quote ('). (prefference is to use single quote for characters, but this has no effect on the transpilation process)
+ 23. A string gets defined by a double quote (") or single quote ('). (preference is to use single quote for characters, but this has no effect on the transpilation process)
  24. A string must end with the same character that was used to define the string. (see note 23) 
  25. An interpolated string gets defined by the grave accent (`).
  26. An interpolated string can evaluate code in it by using the curly brackets ({}) and writing the evaluated code within. The return value of the evaluated code is shown in the string.
  27. Escaping code evaluation in an interpolated string can be done by using double curly brackets ({{}}). This will escape the evaluation. (`{{Hello World}}` == "{Hello World}")
  28. Language blocks get defined using the pipe operator (|). Within these two pipes stands the language. Language blocks can be used for IDE's to provide syntax highlighting, autocomplete etc to the code.
- 29. Language blocks must be defined before a string value, this can also be a variable refferencing the value.
+ 29. Language blocks must be defined before a string value, this can also be a variable referencing the value.
  30. Language block escaping. This can be done for supported languages. It transforms the string into the escaped value. This can be done by placing an exclamation mark (!) before the language definition. (|!html|"<" == "&lt;")
