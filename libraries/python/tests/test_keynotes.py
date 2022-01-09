@@ -5,9 +5,9 @@ from unittest import TestCase
 from libraries.python.tests.utils import get_sample
 
 
-class TestComments(TestCase):
-    data = get_sample("comments")
+class TestKeynotes(TestCase):
+    data = get_sample("keynotes")
 
-    def test_comments(self):
+    def test_keynotes(self):
         # TODO: implement function which asserts
-        self.assertEqual(self.data, {}, "Comments should be removed")
+        self.assertEqual(self.data, {}, "Keynotes should be removed for transpilation")
