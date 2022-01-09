@@ -2,8 +2,8 @@
 
 ## What is it?
 
-OODF is a file format designed to be more advanced and object oriented.
-This means that there are variables which can be refferenced.
+OODF is a file format designed to be more advanced and object-oriented.
+This means that there are variables which can be referenced.
 
 ## Current stage
 
@@ -11,5 +11,5 @@ The project is currently still in the idea phase, which means that we're still d
 
 ## Ideas?
 
-Feel free to create a issue/discussion with your suggestion!
+Feel free to create an issue/discussion with your suggestion!
 

@@ -6,3 +6,6 @@ Usage/documentation when library is in a more stable/finished state.
 """
 
 from .__lib__ import *
+
+from .tokens import tokens
+from .methods import load

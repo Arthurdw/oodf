@@ -2,7 +2,7 @@
 # Monorepo: https://github.com/Arthurdw/oodf/libraries/python
 import os
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 from oodf.__lib__ import __version__, __package__, __description__, __author__, __license__, __author_email__
 
