@@ -106,6 +106,10 @@ def tokenize(content: str) -> List[Token]:
 
     if __tkn_cache:
         token = list(__tkn_cache.values())[0][2]
-        raise ExpectedEOT(__loc, f"Expected end of token ({repr(token.type.eot)}) for {repr(token.type.represents)}")
+        if token.type.eot != "\n":
+            raise ExpectedEOT(
+                __loc,
+                f"Expected end of token ({repr(token.type.eot)}) for {repr(token.type.represents)}"
+            )
 
     return registered_tokens

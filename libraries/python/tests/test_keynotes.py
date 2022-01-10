@@ -81,9 +81,8 @@ class TestKeynotes(TestCase):
         self.assertEqual({}, load(self.data), "Keynotes should be removed for parsing to a python dictionary")
 
     def test_keynotes_raises_invalid_syntax(self):
-        self.assertRaises(InvalidSyntax, tokenize, "/! This is not a valid syntax\n")
+        self.assertRaises(InvalidSyntax, tokenize, "/! This is not a valid syntax")
         self.assertRaises(InvalidSyntax, tokenize, "/!\nThis is not a valid syntax\n!/")
 
     def test_keynotes_raises_expected_eot(self):
-        self.assertRaises(ExpectedEOT, tokenize, "/!/ EOT is not in place")
         self.assertRaises(ExpectedEOT, tokenize, "/!!\nEOT is not in place\n")
