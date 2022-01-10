@@ -60,7 +60,7 @@ def tokenize(content: str) -> List[Token]:
                         __tkn_cache[tt.represents] = (0, False, Token(tt, ""))
 
                 if not __tkn_cache and char not in ["\n", " "]:
-                    raise InvalidSyntax(__loc, f"Unexpected character '{char}'")
+                    raise InvalidSyntax(__loc, f"Unexpected character {repr(char)}")
                 continue
 
             for tt, (current, end, token) in deepcopy(__tkn_cache).items():
