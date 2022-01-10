@@ -4,3 +4,8 @@
 """
 Test suites for the oodf library.
 """
+from libraries.python.oodf import tokens
+
+token_types = {
+    t.represents: t for t in tokens
+}

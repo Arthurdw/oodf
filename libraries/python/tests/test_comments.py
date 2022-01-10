@@ -4,11 +4,25 @@
 from unittest import TestCase
 
 from libraries.python.oodf import load
+from libraries.python.oodf.core import tokenize
+from libraries.python.oodf.core.lexer import Token
+from libraries.python.tests import token_types
 from libraries.python.tests.utils import get_sample
 
 
 class TestComments(TestCase):
     data = get_sample("comments")
+    tokens = [
+        Token(token_types["SINGLE-LINE-COMMENT"], "Welcome to oodf"),
+        Token(
+            token_types["MULTI-LINE-COMMENT"],
+            "A simple, yet effective way to grant your config files access to the power of objects.\n"
+            "If you have any suggestions, please let us know by creating a pull request."
+        )
+    ]
+
+    def test_comments_tokenize(self):
+        self.assertEqual(self.tokens, tokenize(self.data), "Should tokenize comments")
 
     def test_comments_parse(self):
-        self.assertEqual({}, load(self.data), "Comments should be removed")
+        self.assertEqual({}, load(self.data), "Comments should be removed for parsing to a python dictionary")
