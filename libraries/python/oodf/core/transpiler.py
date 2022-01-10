@@ -3,17 +3,24 @@
 
 from __future__ import annotations
 
-from typing import Dict, Union, Any
+from typing import TYPE_CHECKING, Union
 
-from .lexer import Lexer
+if TYPE_CHECKING:
+    from .lexer import Token
+    from typing import Dict, Any, List
 
 key_type = Union[str, int, float, bool, None]
 
 
-class Transpiler:
-    def __init__(self, lexer: Lexer):
-        self.lexer = lexer
+def transpile(tokens: List[Token]) -> Dict[key_type, Union[key_type, Dict[key_type, Any]]]:
+    """
+    Transpile a collection of tokens into a python dictionary.
 
-    def transpile(self) -> Dict[key_type, Union[key_type, Dict[key_type, Any]]]:
-        # TODO: Implement transpiler
-        return {"transpiler": "todo"}
+    Parameters:
+    -----------
+    tokens: List[:class:`oodf.core.lexer.Token`]
+        The collection of tokens whom must be transpiled.
+        This collection can be retrieved through the lexer output. (tokenize)
+    """
+    # TODO: Implement transpiler
+    return {"transpiler": "todo"}

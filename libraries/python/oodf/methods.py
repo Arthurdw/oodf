@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from .core import Lexer, Transpiler
+from .core import tokenize, transpile
 
 
 def load(content: str) -> dict:
@@ -20,6 +20,4 @@ def load(content: str) -> dict:
     :class:`dict`
         The parsed oodf dictionary.
     """
-    lexer = Lexer(content)
-    transpiler = Transpiler(lexer)
-    return transpiler.transpile()
+    return transpile(tokenize(content))

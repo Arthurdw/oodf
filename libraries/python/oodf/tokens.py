@@ -1,8 +1,15 @@
 # Project is under an MIT-style license that can be found in the LICENSE file at the monorepo
 # Monorepo: https://github.com/Arthurdw/oodf/libraries/python
-from dataclasses import dataclass
 
-tokens = []
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from typing import List
+
+tokens: List[TokenType] = []
 
 
 @dataclass
@@ -16,11 +23,14 @@ class TokenType:
         tokens.append(self)
 
 
-if len(tokens) == 0:  # First time we are initializing the tokens
-    # Comments
-    TokenType("SINGLE-LINE-COMMENT", "/-/", "\n")
-    TokenType("MULTI-LINE-COMMENT", "/--", "--/")
+"""
+All token types, defines the behaviour of the language.
+"""
 
-    # Keynotes
-    TokenType("SINGLE-LINE-KEYNOTE", "/!/", "\n")
-    TokenType("MULTI-LINE-KEYNOTE", "/!!", "!!/")
+# Comments
+TokenType("SINGLE-LINE-COMMENT", "/-/", "\n")
+TokenType("MULTI-LINE-COMMENT", "/--", "--/")
+
+# Keynotes
+TokenType("SINGLE-LINE-KEYNOTE", "/!/", "\n")
+TokenType("MULTI-LINE-KEYNOTE", "/!!", "!!/")
