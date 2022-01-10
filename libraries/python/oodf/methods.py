@@ -19,5 +19,13 @@ def load(content: str) -> dict:
     --------
     :class:`dict`
         The parsed oodf dictionary.
+
+    Raises:
+    -------
+    InvalidSyntax
+        The OODF syntax is invalid. *(More specifications in error message)*
+    ExpectedEOT
+        No end of token was found. *(which means that the OODF string is not well-formed, and no end signature was
+        found)*
     """
     return transpile(tokenize(content))

@@ -33,6 +33,13 @@ def tokenize(content: str) -> List[Token]:
     -----------
     content: :class:`str`
         A string in OODF syntax.
+
+    Raises:
+    -------
+    InvalidSyntax
+        The OODF syntax is invalid and could not be tokenized.
+    ExpectedEOT
+        No end of token was found.
     """
     # TODO: Optimize in the future
     registered_tokens: List[Token] = []
