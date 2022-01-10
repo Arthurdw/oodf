@@ -9,8 +9,8 @@ class ParserException(OODFException):
     """Represents an exception which occurs during the parsing of OODF syntax."""
 
     def __init__(self, location: Tuple[int, int], message: str):
-        self.line = location[0]
-        self.column = location[1]
+        self.line = location[0] + 1
+        self.column = location[1] + 1
         super().__init__(f"[{self.line}:{self.column}] {message}")
 
 
