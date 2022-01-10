@@ -4,8 +4,10 @@
 """
 Test suites for the oodf library.
 """
-from libraries.python.oodf import tokens
+from typing import Dict
 
-token_types = {
-    t.represents: t for t in tokens
-}
+from libraries.python.oodf import tokens
+from libraries.python.oodf.tokens import TokenType
+
+# TokenTypes used for easy access to the token types.
+token_types: Dict[str, TokenType] = {t.represents: t for t in tokens}
