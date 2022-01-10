@@ -111,7 +111,7 @@ def tokenize(content: str) -> List[Token]:
                 __loc,
                 f"Expected end of token ({repr(token.type.eot)}) for {repr(token.type.represents)}"
             )
-        
+
         registered_tokens.append(token)
 
     return registered_tokens

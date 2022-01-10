@@ -24,6 +24,7 @@ class TestComments(TestCase):
 
     def test_comments_tokenize(self):
         self.assertEqual(self.tokens, tokenize(self.data), "Should tokenize comments")
+        self.assertEqual("-"*9, tokenize(f"/--{'-'*9}--/")[0].content)
 
     def test_comments_parse(self):
         self.assertEqual({}, load(self.data), "Comments should be removed for parsing to a python dictionary")

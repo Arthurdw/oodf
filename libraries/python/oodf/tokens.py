@@ -38,7 +38,7 @@ TokenType("MULTI-LINE-KEYNOTE", "/!!", "!!/")
 
 # TODO: Implement the following tokens
 # # Variable
-# TokenType("VARIABLE", "([a-z|A-Z])", ["\n", ";"], regex=0)
+TokenType("VARIABLE", "([a-z|A-Z])", ["\n", ";"], regex=0, content=True)
 #
 # # Values
 # TokenType("STRING", '"', '"')
