@@ -42,6 +42,7 @@ def tokenize(content: str) -> List[Token]:
         No end of token was found.
     """
     # TODO: Optimize in the future
+    # TODO: Add support for multiple SOT/EOT tokens
     registered_tokens: List[Token] = []
 
     __tkn_cache: Dict[str, CachedToken] = {}
