@@ -11,4 +11,4 @@ no false;
 
 collection [1, 2, 3];
 
-nullValue: null;
+nullValue null;
