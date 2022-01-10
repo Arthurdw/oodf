@@ -36,10 +36,10 @@ TokenType("MULTI-LINE-COMMENT", "/--", "--/")
 TokenType("SINGLE-LINE-KEYNOTE", "/!/", "\n")
 TokenType("MULTI-LINE-KEYNOTE", "/!!", "!!/")
 
-# TODO: Implement the following tokens
-# # Variable
+# Variable
 TokenType("VARIABLE", "([a-z|A-Z])", ["\n", ";"], regex=0, content=True)
-#
+
+# TODO: Implement the following tokens
 # # Values
 # TokenType("STRING", '"', '"')
 # TokenType("MULTI-LINE-STRING", '"""', '"""')

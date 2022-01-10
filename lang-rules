@@ -1,6 +1,6 @@
   1. Variables may reference another variable, but no recursion is allowed.
   2. Variables may be declared by using a '=' or just leaving a space.
-  3. Variables declaration must end with a ';' or a newline. 
+  3. Variables declaration must end with a ';'.
   4. Objects may be empty.
   5. An object property must always have a value. If meant to be empty the 'null' value can be used.
   6. Strings which are not delimited by a character (besides of newline) are merged together and seen as one.
