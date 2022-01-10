@@ -26,9 +26,7 @@ class TokenType:
         tokens.append(self)
 
 
-"""
-All token types, defines the behaviour of the language.
-"""
+"""All token types, defines the syntax of the language."""
 
 # Comments
 TokenType("SINGLE-LINE-COMMENT", "/-/", "\n")
