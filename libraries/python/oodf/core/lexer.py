@@ -11,7 +11,7 @@ from ..exceptions import ExpectedEOT, InvalidSyntax
 from ..tokens import tokens
 
 if TYPE_CHECKING:
-    from .transpiler import key_type
+    from .transpiler import ValidType
     from ..tokens import TokenType
     from typing import List, Union, Dict, Any
 
@@ -19,7 +19,7 @@ if TYPE_CHECKING:
 @dataclass
 class Token:
     type: TokenType
-    content: Union[key_type, List[key_type], Dict[key_type, Union[key_type, Any]]]
+    content: Union[ValidType, List[ValidType], Dict[ValidType, Union[ValidType, Any]]]
 
 
 CachedToken = Tuple[int, bool, Token]
@@ -48,6 +48,9 @@ def tokenize(content: str) -> List[Token]:
                 for tt in tokens:
                     if tt.sot[0] == char:
                         __tkn_cache[tt.represents] = (0, False, Token(tt, ""))
+
+                if not __tkn_cache and char not in ["\n", " "]:
+                    raise InvalidSyntax(__loc, f"Unexpected character '{char}'")
                 continue
 
             for tt, (current, end, token) in deepcopy(__tkn_cache).items():

@@ -3,16 +3,16 @@
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Union
+from typing import Dict, Any, List, TYPE_CHECKING, Union
 
 if TYPE_CHECKING:
     from .lexer import Token
-    from typing import Dict, Any, List
 
-key_type = Union[str, int, float, bool, None]
+ValidType = Union[str, int, float, bool, None]
+TranspiledContent = Dict[ValidType, Union[ValidType, Dict[ValidType, Any]]]
 
 
-def transpile(tokens: List[Token]) -> Dict[key_type, Union[key_type, Dict[key_type, Any]]]:
+def transpile(tokens: List[Token]) -> TranspiledContent:
     """
     Transpile a collection of tokens into a python dictionary.
 
@@ -23,4 +23,20 @@ def transpile(tokens: List[Token]) -> Dict[key_type, Union[key_type, Dict[key_ty
         This collection can be retrieved through the lexer output. (tokenize)
     """
     # TODO: Implement transpiler
-    return {"transpiler": "todo"}
+
+    transpiled: TranspiledContent = {}
+
+    # Ignore keynotes & comments
+    def should_ignore(tk: Token) -> bool:
+        for keyword in ["keynote", "comment"]:
+            if keyword in tk.type.represents.lower():
+                return False
+        return True
+
+    tokens = filter(should_ignore, tokens)
+
+    # TODO: Implement transpiler
+    for token in tokens:
+        pass
+
+    return transpiled
