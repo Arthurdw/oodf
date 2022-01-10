@@ -6,6 +6,7 @@ from unittest import TestCase
 from libraries.python.oodf import load
 from libraries.python.oodf.core import tokenize
 from libraries.python.oodf.core.lexer import Token
+from libraries.python.oodf.exceptions import InvalidSyntax, ExpectedEOT
 from libraries.python.tests import token_types
 from libraries.python.tests.utils import get_sample
 
@@ -78,3 +79,11 @@ class TestKeynotes(TestCase):
 
     def test_keynotes_parse(self):
         self.assertEqual({}, load(self.data), "Keynotes should be removed for parsing to a python dictionary")
+
+    def test_keynotes_raises_invalid_syntax(self):
+        self.assertRaises(InvalidSyntax, tokenize, "/! This is not a valid syntax\n")
+        self.assertRaises(InvalidSyntax, tokenize, "/!\nThis is not a valid syntax\n!/")
+
+    def test_keynotes_raises_expected_eot(self):
+        self.assertRaises(ExpectedEOT, tokenize, "/!/ EOT is not in place")
+        self.assertRaises(ExpectedEOT, tokenize, "/!!\nEOT is not in place\n")
