@@ -34,6 +34,7 @@ def tokenize(content: str) -> List[Token]:
     content: :class:`str`
         A string in OODF syntax.
     """
+    # TODO: Optimize in the future
     registered_tokens: List[Token] = []
 
     __tkn_cache: Dict[str, CachedToken] = {}
@@ -76,6 +77,7 @@ def tokenize(content: str) -> List[Token]:
                         if current >= len(token.type.eot):
                             token.content = token.content.strip()
                             registered_tokens.append(token)
+                            __end_buffer = ""
                             __tkn_cache = {}
                             continue
                     else:
